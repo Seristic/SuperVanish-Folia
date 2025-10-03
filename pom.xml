@@ -64,7 +64,7 @@
     <repositories>
         <repository>
             <id>papermc-repo</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
             <id>essentials-repo</id>
@@ -84,7 +84,7 @@
         </repository>
         <repository>
             <id>placeholderapi-repo</id>
-            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+            <url>https://repo.extendedclip.com/releases/</url>
         </repository>
         <repository>
             <id>dynmap-repo</id>
@@ -191,7 +191,7 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.10.10</version>
+            <version>2.11.6</version>
             <scope>provided</scope>
         </dependency>
         <!--BrigadierAPI-->
@@ -205,25 +205,25 @@
         <dependency>
             <groupId>io.github.projectunified</groupId>
             <artifactId>minelib-scheduler-entity</artifactId>
-            <version>1.1.2</version>
+            <version>1.2.5</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.github.projectunified</groupId>
             <artifactId>minelib-scheduler-global</artifactId>
-            <version>1.1.2</version>
+            <version>1.2.5</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.github.projectunified</groupId>
             <artifactId>minelib-scheduler-async</artifactId>
-            <version>1.1.2</version>
+            <version>1.2.5</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>io.github.projectunified</groupId>
             <artifactId>minelib-scheduler-canceller</artifactId>
-            <version>1.1.2</version>
+            <version>1.2.5</version>
             <scope>compile</scope>
         </dependency>
         <!--OpenInv-->

@@ -20,6 +20,7 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +55,7 @@ public class ActionBarMgr {
         }, 0, 2 * 20);
     }
 
-    private void sendActionBar(Player p, String bar) {
+    private void sendActionBar(Player p, String bar) throws InvocationTargetException {
         try {
             Class.forName("net.md_5.bungee.api.chat.ComponentBuilder");
             p.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(bar));
