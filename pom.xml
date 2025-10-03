@@ -6,7 +6,7 @@
 
     <groupId>de.myzelyam</groupId>
     <artifactId>SuperVanish</artifactId>
-    <version>6.2.20</version>
+    <version>6.2.21</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -225,6 +225,13 @@
             <artifactId>minelib-scheduler-canceller</artifactId>
             <version>1.1.2</version>
             <scope>compile</scope>
+        </dependency>
+        <!--OpenInv-->
+        <dependency>
+            <groupId>com.github.Jikoo</groupId>
+            <artifactId>OpenInv</artifactId>
+            <version>5.1.12</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
