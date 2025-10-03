@@ -28,6 +28,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
@@ -161,6 +162,10 @@ public class VanishIndication extends Feature {
                         : EnumWrappers.NativeGameMode.fromBukkit(change.getGameMode()),
                 WrappedChatComponent.fromText(change.getPlayerListName())));
         packet.getPlayerInfoDataLists().write(0, data);
-    ProtocolLibrary.getProtocolManager().sendServerPacket(p, packet);
+        try {
+            ProtocolLibrary.getProtocolManager().sendServerPacket(p, packet);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
