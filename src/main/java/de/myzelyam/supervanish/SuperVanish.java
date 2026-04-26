@@ -23,7 +23,6 @@ import de.myzelyam.supervanish.visibility.FileVanishStateMgr;
 import de.myzelyam.supervanish.visibility.ServerListPacketListener;
 import de.myzelyam.supervanish.visibility.VisibilityChanger;
 import de.myzelyam.supervanish.visibility.hiders.PreventionHider;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -48,37 +47,24 @@ public class SuperVanish extends JavaPlugin implements SuperVanishPlugin {
             "6.0.4", "6.0.5", "6.1.0", "6.1.1", "6.1.2", "6.1.3", "6.1.4", "6.1.5", "6.1.6", "6.1.7",
             "6.1.8", "6.2.0", "6.2.1", "6.2.2", "6.2.3", "6.2.4", "6.2.5", "6.2.6", "6.2.7", "6.2.8",
             "6.2.9", "6.2.10", "6.2.11", "6.2.12", "6.2.13", "6.2.14", "6.2.15", "6.2.16", "6.2.17",
-            "6.2.18", "6.2.19", "6.2.20"},
+            "6.2.18", "6.2.19", "6.2.20", "6.2.21"},
             NON_REQUIRED_MESSAGES_UPDATES = {"6.0.0", "6.0.1", "6.0.2", "6.0.3", "6.0.4", "6.0.5", "6.1.0",
                     "6.1.1", "6.1.2", "6.1.3", "6.1.4", "6.1.5", "6.1.6", "6.1.7", "6.1.8", "6.2.0", "6.2.1",
                     "6.2.2", "6.2.3", "6.2.4", "6.2.5", "6.2.6", "6.2.7", "6.2.8", "6.2.9", "6.2.10", "6.2.11",
-                    "6.2.12", "6.2.13", "6.2.14", "6.2.15", "6.2.16", "6.2.17", "6.2.18", "6.2.19", "6.2.20"};
+                    "6.2.12", "6.2.13", "6.2.14", "6.2.15", "6.2.16", "6.2.17", "6.2.18", "6.2.19", "6.2.20", "6.2.21"};
 
-    @Getter
     private boolean useProtocolLib;
-    @Getter
     private ActionBarMgr actionBarMgr;
-    @Getter
     private FileVanishStateMgr vanishStateMgr;
-    @Getter
     private VersionUtil versionUtil;
-    @Getter
     private ConfigMgr configMgr;
-    @Getter
     private FeatureMgr featureMgr;
-    @Getter
     private PlaceholderConverter placeholderConverter;
-    @Getter
     private VanishCommand command;
-    @Getter
     private VisibilityChanger visibilityChanger;
-    @Getter
     private UpdateNotifier updateNotifier;
-    @Getter
     private LoginListener loginListener;
-    @Getter
     private LayeredPermissionChecker layeredPermissionChecker;
-    @Getter
     private PluginHookMgr pluginHookMgr;
     private Set<VanishPlayer> vanishPlayers = new HashSet<>();
 
@@ -295,5 +281,43 @@ public class SuperVanish extends JavaPlugin implements SuperVanishPlugin {
     @Override
     public void logException(Throwable e) {
         ExceptionLogger.logException(e, this);
+    }
+
+
+    public boolean isUseProtocolLib() {
+        return useProtocolLib;
+    }
+
+    public ActionBarMgr getActionBarMgr() {
+        return actionBarMgr;
+    }
+
+    @Override
+    public FileVanishStateMgr getVanishStateMgr() {
+        return vanishStateMgr;
+    }
+
+    public VersionUtil getVersionUtil() {
+        return versionUtil;
+    }
+
+    public ConfigMgr getConfigMgr() {
+        return configMgr;
+    }
+
+    public FeatureMgr getFeatureMgr() {
+        return featureMgr;
+    }
+
+    public PlaceholderConverter getPlaceholderConverter() {
+        return placeholderConverter;
+    }
+
+    public VisibilityChanger getVisibilityChanger() {
+        return visibilityChanger;
+    }
+
+    public PluginHookMgr getPluginHookMgr() {
+        return pluginHookMgr;
     }
 }

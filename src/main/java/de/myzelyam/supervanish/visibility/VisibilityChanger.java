@@ -15,7 +15,6 @@ import de.myzelyam.api.vanish.PostPlayerShowEvent;
 import de.myzelyam.supervanish.SuperVanish;
 import de.myzelyam.supervanish.utils.Validation;
 import de.myzelyam.supervanish.visibility.hiders.PlayerHider;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -27,7 +26,6 @@ import java.util.logging.Level;
 
 public class VisibilityChanger {
 
-    @Getter
     private final PlayerHider hider;
     private final SuperVanish plugin;
     private final FileConfiguration config;
@@ -156,5 +154,9 @@ public class VisibilityChanger {
         } catch (Exception e) {
             plugin.logException(e);
         }
+    }
+
+    public PlayerHider getHider() {
+        return hider;
     }
 }

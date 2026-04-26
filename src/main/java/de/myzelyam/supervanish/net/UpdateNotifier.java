@@ -28,8 +28,6 @@ import java.util.logging.Level;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import lombok.Getter;
-
 public class UpdateNotifier {
 
     // 20 minutes
@@ -37,10 +35,8 @@ public class UpdateNotifier {
 
     private final SuperVanish plugin;
     private final BukkitTask checkTask;
-    @Getter
     private final String currentVersion;
     private final Set<UUID> notifiedPlayers = new HashSet<>();
-    @Getter
     private volatile String latestVersion;
     private boolean notifiedConsole = false;
 

@@ -23,8 +23,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import lombok.Data;
-
 public class FeatureMgr {
 
     private static final Requirement<FeatureInfo> protocolLibInstalled = featureInfo -> Bukkit.getPluginManager().isPluginEnabled("ProtocolLib"),
@@ -102,7 +100,6 @@ public class FeatureMgr {
         return activeFeatures;
     }
 
-    @Data
     private static class FeatureInfo {
         private final Class<? extends Feature> featureClass;
         private final Collection<Requirement<FeatureInfo>> requirements;
@@ -117,6 +114,18 @@ public class FeatureMgr {
 
         FeatureInfo(Class<? extends Feature> featureClass, SuperVanish plugin) {
             this(featureClass, plugin, Collections.emptySet());
+        }
+
+        public SuperVanish getPlugin() {
+            return plugin;
+        }
+
+        public Class<? extends Feature> getFeatureClass() {
+            return featureClass;
+        }
+
+        public Collection<Requirement<FeatureInfo>> getRequirements() {
+            return requirements;
         }
     }
 }
