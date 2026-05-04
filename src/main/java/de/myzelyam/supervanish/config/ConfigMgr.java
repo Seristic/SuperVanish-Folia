@@ -17,11 +17,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import java.util.Collections;
 import java.util.logging.Level;
 
-import lombok.Data;
-
 import static de.myzelyam.supervanish.SuperVanish.*;
 
-@Data
 public class ConfigMgr {
 
     private final SuperVanish plugin;
@@ -93,5 +90,49 @@ public class ConfigMgr {
 
     public FileMgr getFileMgr() {
         return fileMgr;
+    }
+
+    public FileConfiguration getPlayerData() {
+        return playerData;
+    }
+
+    public StorageFile getPlayerDataFile() {
+        return playerDataFile;
+    }
+
+    public FileConfiguration getMessages() {
+        return messages;
+    }
+
+    public ConfigurableFile getMessagesFile() {
+        return messagesFile;
+    }
+
+    public ConfigurableFile getSettingsFile() {
+        return settingsFile;
+    }
+
+    public FileConfiguration getSettings() {
+        return settings;
+    }
+
+    public boolean isSettingsUpdateRequired() {
+        return settingsUpdateRequired;
+    }
+
+    public boolean isMessagesUpdateRequired() {
+        return messagesUpdateRequired;
+    }
+
+    public void setSettings(FileConfiguration settings) {
+        this.settings = settings;
+    }
+
+    public void setMessages(FileConfiguration messages) {
+        this.messages = messages;
+    }
+
+    public void setPlayerData(FileConfiguration playerData) {
+        this.playerData = playerData;
     }
 }

@@ -16,10 +16,6 @@ import org.bukkit.command.CommandSender;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
 public enum CommandAction {
     VANISH_SELF(
             "sv.use",
@@ -92,11 +88,28 @@ public enum CommandAction {
      * Use {@link #checkPermission(CommandSender, SuperVanish)} to check whether a {@link CommandSender} has
      * permission to perform an action or not
      */
-    @Getter
     private final String mainPermission;
     private final boolean console;
-    @Getter
     private final String usage, description;
+
+    CommandAction(String mainPermission, boolean console, String usage, String description) {
+        this.mainPermission = mainPermission;
+        this.console = console;
+        this.usage = usage;
+        this.description = description;
+    }
+
+    public String getMainPermission() {
+        return mainPermission;
+    }
+
+    public String getUsage() {
+        return usage;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 
     static List<String> getAvailableFirstArguments(CommandSender sender, SuperVanish plugin) {
         Validation.checkNotNull(plugin, "plugin cannot be null");

@@ -52,14 +52,18 @@ public class ServerListPacketListener extends PacketAdapter {
         // Use Paper event listener if available
         try {
             Class.forName("com.destroystokyo.paper.event.server.PaperServerListPingEvent");
-            plugin.getLogger().log(Level.INFO, "Hooked into PaperSpigot for server list ping support");
+            plugin.getLogger().log(Level.INFO, "Hooked into PaperSpigot for server list vanish support");
             plugin.getServer().getPluginManager().registerEvents(new PaperServerPingListener(plugin), plugin);
         } catch (ClassNotFoundException ignored) {
             // Otherwise use ProtocolLib
-            if (plugin.getVersionUtil().isOneDotXOrHigher(19)) {
-                ProtocolLibrary.getProtocolManager().addPacketListener(new ServerListPacketListener(plugin));
+            if (!plugin.getVersionUtil().isOneDotXOrHigher(26)) {
+                if (plugin.getVersionUtil().isOneDotXOrHigher(19)) {
+                    ProtocolLibrary.getProtocolManager().addPacketListener(new ServerListPacketListener(plugin));
+                } else {
+                    ProtocolLibrary.getProtocolManager().addPacketListener(new ServerListPacketListener(plugin, true));
+                }
             } else {
-                ProtocolLibrary.getProtocolManager().addPacketListener(new ServerListPacketListener(plugin, true));
+                plugin.getLogger().log(Level.INFO, "Please use PaperSpigot for server list vanish support");
             }
         }
     }

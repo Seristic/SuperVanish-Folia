@@ -10,9 +10,6 @@ package de.myzelyam.supervanish;
 
 import org.bukkit.entity.Player;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.Objects;
 import java.util.UUID;
 
@@ -23,11 +20,8 @@ import java.util.UUID;
 public class VanishPlayer {
 
     private final SuperVanish plugin;
-    @Getter
     private final UUID playerUUID;
-    @Setter
     private boolean itemPickUps;
-    @Getter
     private int seePermissionLevel, usePermissionLevel;
 
     VanishPlayer(Player player, SuperVanish plugin, boolean itemPickUps) {
@@ -46,6 +40,22 @@ public class VanishPlayer {
 
     public boolean hasItemPickUpsEnabled() {
         return itemPickUps;
+    }
+
+    public UUID getPlayerUUID() {
+        return playerUUID;
+    }
+
+    public int getSeePermissionLevel() {
+        return seePermissionLevel;
+    }
+
+    public int getUsePermissionLevel() {
+        return usePermissionLevel;
+    }
+
+    public void setItemPickUps(boolean itemPickUps) {
+        this.itemPickUps = itemPickUps;
     }
 
     @Override
